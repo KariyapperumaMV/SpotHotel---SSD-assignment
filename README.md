@@ -1,0 +1,1 @@
+# SpotHotel---SSD-assignment
