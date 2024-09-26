@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signUpAction } from '../redux/actions/userAction';
 import Loader from '../components/Loader';
 import Meta from '../utils/Meta';
+import OAuthGoogle from '../components/OAuth_Google';
 
 const SignUp = () => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
@@ -82,6 +83,8 @@ const SignUp = () => {
 
                             <p className="mt-5 w-full sm:w-2/4 md:w-2/3 lg:w-1/3 text-center">By signing up, I agree to the Hotels <button className="text-blue-500">Terms and Conditions </button> and <button className="text-blue-500">Privacy Statement</button>.</p>
                             <button onClick={signupHandler} type="button" className=" mt-12 p-3 w-2/3 sm:w-2/4 md:w-1/3 lg:w-1/5 text-white rounded-3xl hover:bg-blue-900 bg-blue-700 disabled:bg-blue-500" disabled={email.length < 1 || password.length < 8 || password !== confirmPassword || name.length < 1}>Sign Up</button>
+
+                            <OAuthGoogle/>
                             <p className="mt-4">Already have an account? <Link to="/login" className="text-blue-700" >Sign in</Link></p>
                         </div>
                     </div>
