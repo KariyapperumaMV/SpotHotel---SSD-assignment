@@ -33,7 +33,7 @@ const Booking = () => {
     const prices = room?.pricePerDay * dates?.length;
     const vat = room?.pricePerDay * dates?.length * (18 / 100);
     const totalPrice = prices + vat;
-    const willCheckOut = phone.length == 10;
+    const willCheckOut = phone.length === 10;
     const bookingDetails = {
         name,
         email,

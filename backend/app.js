@@ -3,10 +3,6 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 const helmet = require('helmet');
 const cors = require('cors');
-const session = require('express-session');
-const passport = require('passport');
-require('dotenv').config();
-require('./config/passport-setup');
 
 const app = express();
 
@@ -73,10 +69,6 @@ app.use('/api/v1', userRoute);
 app.use('/api/v1', hotelRoute);
 app.use('/api/v1', roomRoute);
 app.use('/api/v1', bookingRoute);
-
-//google 
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use(express.static(path.join(__dirname, "./../frontend/build")));
 

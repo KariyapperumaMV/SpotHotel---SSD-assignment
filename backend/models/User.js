@@ -22,11 +22,6 @@ const userSchema = new mongoose.Schema({
         minlength: 8,
         select: false
     },
-    googleId: { // Add this field
-        type: String,
-        unique: true
-    },
-    
     bookings: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Orders"

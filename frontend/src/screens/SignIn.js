@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signInAction } from '../redux/actions/userAction';
 import Loader from '../components/Loader';
 import Meta from '../utils/Meta';
+import googleButton from '../images/Google.png'
 
 const SignIn = () => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
@@ -41,7 +42,13 @@ const SignIn = () => {
                                 <VisibilityIcon className={`cursor-pointer ${isPasswordHidden ? "text-red-400" : "text-red-800"}`} onClick={() => setIsPasswordHidden(!isPasswordHidden)} />
                             </div>
                             <p className="mt-5 w-full sm:w-2/4 md:w-2/3 lg:w-1/3 text-center">By signing in, I agree to the Hotels <button className="text-blue-500">Terms and Conditions </button> and <button className="text-blue-500">Privacy Statement</button>.</p>
-                            <button onClick={signinHandler} type="button" className=" mt-12 p-3 w-2/3 sm:w-2/4 md:w-1/3 lg:w-1/5 text-white rounded-3xl hover:bg-blue-900 bg-blue-700 disabled:bg-blue-500" disabled={email.length < 1 || password.length < 8 ? true : false}>Sign In</button>
+
+                            {/*Google button*/}
+                            <button className=" border-2 mt-5 p-3 w-2/3 sm:w-2/4 md:w-1/3 lg:w-1/5 text-white rounded-3xl bg-white"  type="button">
+                                <img className="btn-auth-img" src={googleButton} alt='google sign in'/>
+                            </button>
+                            
+                            <button onClick={signinHandler} type="button" className=" mt-3 p-3 w-2/3 sm:w-2/4 md:w-1/3 lg:w-1/5 text-white rounded-3xl hover:bg-blue-900 bg-blue-700 disabled:bg-blue-500" disabled={email.length < 1 || password.length < 8 ? true : false}>Sign In</button>
                             <p className="mt-4">Don't have an account? <Link to="/signup" className="text-blue-700" >Create one</Link></p>
                         </div>
                     </div>
