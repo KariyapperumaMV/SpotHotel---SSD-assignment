@@ -1,4 +1,4 @@
-# SpotHotel---SSD-assignment
+# SpotHotel
 
 # Install Dependencies
 
